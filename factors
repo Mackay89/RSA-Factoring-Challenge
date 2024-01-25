@@ -1,8 +1,10 @@
 #!/usr/bin/bash
+
 FILE=$1
-while read NUMBERS; do 
+
+while read NUMBER; do 
 	factors=($(factor $NUMBER))
-	p=$(factors[-2])
-	q=$(factors{-1])
+	p=${factors[-2]}
+	q=${factors[-1]}
 	echo "$NUMBER=$p*$q"
 done < $FILE
