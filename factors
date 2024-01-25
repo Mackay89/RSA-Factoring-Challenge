@@ -4,7 +4,5 @@ FILE=$1
 
 while read NUMBER; do 
 	factors=($(factor $NUMBER))
-	p=${factors[-2]}
-	q=${factors[-1]}
-	echo "$NUMBER=$(($NUMBER/$p))*$q"
+	echo "$NUMBER=$(($NUMBER/${factors[1]}))*${factors[1]}"
 done < $FILE
