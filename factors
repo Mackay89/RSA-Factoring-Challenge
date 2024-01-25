@@ -2,7 +2,8 @@
 
 FILE=$1
 
-while read NUMBER; do 
+while read NUMBER;
+do 
 	factors=($(factor $NUMBER))
 	echo "$NUMBER=$(($NUMBER/${factors[1]}))*${factors[1]}"
 done < $FILE
