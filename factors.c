@@ -1,14 +1,16 @@
 #include "factor.h"
 
 /**
- * main - main function 
+ * main - main function
+ * @argc: The number of command-line argument
+ * @argv: An array of string containing the command-line arguments
  * Return: void
  */
 int main(int argc, char *argv[])
 {
 	size_t tmp;
 	ssize_t line;
-	FILE * fptr;
+	FILE *fptr;
 	char *buffer = NULL;
 
 	if (argc != 2)
