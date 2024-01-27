@@ -1,4 +1,5 @@
 #!/usr/bin/bash 
+# Read number from file and print the factors in the file 
 
 FILE=$1
 
