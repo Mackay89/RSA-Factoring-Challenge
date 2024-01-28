@@ -14,14 +14,14 @@ with open(filename) as f:
         print("{:d}=".format(num), end='')
 
         if num % 2 == 0:
-            print("{}*2".format(num // 2))
+            print("{}*2".format(num//2))
             continue
 
         for i in range(3, num, 2):
             if num % i == 0:
-                factors = num // i
+                factors = num//i
                 for j in range(3, factors, 2):
-                    if factors % j == 0 or j == 1:
+                    if factors % j == 0:
                         break
                 else:
                     print("{}*{}".format(factors, i))
