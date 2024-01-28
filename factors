@@ -1,4 +1,4 @@
-#!/usr/bin/bash 
+#!/bin/bash 
 #factors.sh
 
 if [ $# -ne 1]; then
