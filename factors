@@ -1,10 +1,16 @@
 #!/usr/bin/bash 
-# Read number from file and print the factors in the file 
+#factors.sh
 
-FILE=$1
+if [ $# -ne 1]; then
+	echo "Usage: $0 <filename>"
+	exit 1
+fi
+	
 
-while read NUMBERS;
+FILE="$1"
+
+while read -r NUMBERS;
 do
 	factors=($(factor $NUMBERS))
 	echo "$NUMBERS=$(($NUMBERS/${factors[1]}))*${factors[1]}"
-done < $FILE
+done < "$FILE"
