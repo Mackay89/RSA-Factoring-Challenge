@@ -1,7 +1,29 @@
 #!/usr/bin/python3
+"""
+RSA Factorization Script.
+
+This script reads a file containing RSA number and performs prime factorization.
+For each RSA number n, the script finds number p and q such that n = p * q.
+
+Usage: ./rsa_factorization <filaname>
+- <filename>: A file containing RSA numbers, one per line.
+
+The prime factorization is printed in the format: n=p*q
+"""
+
 from sys import argv
 
 def is_prime(number):
+    """
+    Check if a number is prime.
+
+    Args:
+    -number (int): The number to check.
+
+    Returns:
+    - bool: True if the number is prime, False otherwise.
+    """
+
     if number < 2:
         return False
     for i in range(2, int(number**0.5) + 1):
@@ -10,6 +32,13 @@ def is_prime(number):
     return True
 
 def rsa_factorization(num):
+    """
+    Perform RSA factorization for a given number and print the result.
+
+    Args:
+    - num (int): The RSA number to factorize.
+    """
+
     print("{:d}=".format(num), end='')
 
     if num == 2:
@@ -24,7 +53,7 @@ def rsa_factorization(num):
                 return
 
 if len(argv) != 2:
-    print("Usage: ./rsa <filename>")
+    print("Usage: ./rsa_factorization <filename>")
     exit(1)
 
 filename = argv[1]
@@ -33,4 +62,3 @@ with open(filename) as f:
     for line in f:
         num = int(line.strip())
         rsa_factorization(num)
-
