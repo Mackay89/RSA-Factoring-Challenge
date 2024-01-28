@@ -17,8 +17,8 @@ with open(filename) as f:
         for i in range(3, num, 2):
             if num % i == 0:
                 factor = num//i
-                for a in range(3, factor, 2):
-                    if factor % a == 0 or a == 0:
+                for j in range(3, factor, 2):
+                    if factor % j == 0 or j == 0:
                         break
                 else:
                     print("{}*{}".format(factor, i))
